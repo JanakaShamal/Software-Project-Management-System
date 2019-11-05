@@ -1,0 +1,107 @@
+body{
+	background-color: green;
+	color: white;
+}
+#header-nav{
+	border-radius: 0;
+	border:0;
+	background-color: yellow;
+}
+@media(min-width: 768px){
+	.nav, #bs{
+	background-color: yellow;
+	}
+}
+@media(max-width: 767px){
+	.nav, #bs{
+	background-color: white;
+	}
+}
+
+p{
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	overflow: hidden;
+}
+.inside{
+	border:1px solid black;
+	margin-left: 10px;
+	margin-right:10px;
+	background-color: gray;
+	padding-bottom: 10px;
+}
+h3,h2{
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Lora', serif;
+}
+
+.category{
+	padding-bottom: 15px;
+}
+.container, .navbar-default{
+	background-color: yellow;
+}
+header{
+	background-color: yellow;
+}
+.container>.navbar-header{
+	height: 170px;
+}
+.container{
+	padding-left: 5px;
+	margin-left: 0;
+}
+.navbar-header button{
+	position: relative;
+	top: 27px;
+	background-color: lightgray;
+}
+.navbar-brand a:hover, .navbar-bramd a:focus{
+	text-decoration: none;
+}
+.inside p a{
+	color: darkblue;
+}
+#nav-list li a{
+	color: darkblue;
+	font-size: 17px;
+}
+.navbar-brand a h1{
+	font-weight: bold;
+	font-family: 'Lora', serif;
+}
+#logo-img {
+  	background: url('../images/restaurant-logo_large.png') no-repeat;
+  	width: 150px;
+  	height: 150px;
+  	margin: 10px 15px 10px 0;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+  	#logo-img {
+    	background: url('../images/restaurant-logo_medium.png') no-repeat;
+    	width: 100px;
+    	height: 100px;
+    	margin: 5px 5px 5px 0;
+  	}
+	.container>.navbar-header{
+	height: 120px;
+	}
+  /* End Header */
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+	.container>.navbar-header{
+	height: 100px;
+	}
+}
+@media (max-width: 767px) {
+	.container>.navbar-header{
+	height: 100px;
+	}
+}
