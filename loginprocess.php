@@ -2,6 +2,7 @@
 require('includes/User.php');
 require('includes/Client.php');
 require('includes/Employee.php');
+require('includes/Admin.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ session_start();
 	if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$queryclient = "SELECT client_id, first_name, last_name, email, contact_number, password FROM client where email = '{$email}'" ;
+		$queryclient = "SELECT client_id, firstname, lastname, email, contact_no, password FROM client where email = '{$email}'" ;
 		$resultclient = mysqli_query($connection, $queryclient);
 		$valid_email = false;
 		$valid_pwd = false;
@@ -29,17 +30,17 @@ session_start();
 					$valid_pwd = true;
 					$client_id = $recordclient['client_id'];
 					$email = $recordclient['email'];
-					$first_name = $recordclient['first_name'];
-					$last_name = $recordclient['last_name'];
-					$contact_number = $recordclient['contact_number'];
-					$current_user = new Client($first_name, $last_name, $email, $contact_number);
+					$firstname = $recordclient['firstname'];
+					$lastname = $recordclient['lastname'];
+					$contact_no = $recordclient['contact_no'];
+					$current_user = new Client($firstname, $lastname, $email, $contact_no);
 					$current_user->set_id($client_id);
 					//break;
 				}
 			//}
 		}
 		else{
-			$queryemployee = "SELECT employee_id, first_name, last_name, email, contact_number, password FROM employee where email = '{$email}'";
+			$queryemployee = "SELECT employee_id, firstname, lastname, email, contact_no, password FROM employee where email = '{$email}'";
 			$resultemployee = mysqli_query($connection,$queryemployee);
 			//while($recordemployee = mysqli_fetch_assoc($resultemployee) && $notlogged){
 			if(mysqli_num_rows($resultemployee)==1){
@@ -49,17 +50,17 @@ session_start();
 				if($recordemployee['password']==sha1($password)){
 					$valid_pwd = true;
 					$employee_id = $recordemployee['employee_id'];
-					$first_name = $recordemployee['first_name'];
-					$last_name = $recordemployee['last_name'];
-					$contact_number = $recordemployee['contact_number'];
+					$firstname = $recordemployee['firstname'];
+					$lastname = $recordemployee['lastname'];
+					$contact_no = $recordemployee['contact_no'];
 					$email = $recordemployee['email'];
-					$current_user = new Employee($first_name, $last_name, $email, $contact_number);
+					$current_user = new Employee($firstname, $lastname, $email, $contact_no);
 					$current_user->set_id($employee_id);
 					//break;
 				}
 			}
 			else{
-				$queryadmin = "SELECT admin_id, first_name, last_name, email, contact_number, password FROM admin where email = '{$email}'";
+				$queryadmin = "SELECT admin_id, firstname, lastname, email, contact_no, password FROM admin where email = '{$email}'";
 				$resultadmin = mysqli_query($connection,$queryadmin);
 				//while($recordemployee = mysqli_fetch_assoc($resultemployee) && $notlogged){
 				if(mysqli_num_rows($resultadmin)==1){
@@ -69,11 +70,11 @@ session_start();
 					if($recordadmin['password']==sha1($password)){
 						$valid_pwd = true;
 						$admin_id = $recordadmin['employee_id'];
-						$first_name = $recordadmin['first_name'];
-						$last_name = $recordadmin['last_name'];
-						$contact_number = $recordadmin['contact_number'];
+						$firstname = $recordadmin['firstname'];
+						$lastname = $recordadmin['lastname'];
+						$contact_no = $recordadmin['contact_no'];
 						$email = $recordadmin['email'];
-						$current_user = new Admin($first_name, $last_name, $email, $contact_number);
+						$current_user = new Admin($firstname, $lastname, $email, $contact_no);
 						$current_user->set_id($admin_id);
 						//break;
 					}
