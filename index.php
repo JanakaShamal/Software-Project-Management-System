@@ -52,7 +52,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 <img src="assets/images/mbr-1920x1278.jpg" title="FULL SCREEN SLIDER">
                 <div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
-                    <h2 class="mbr-fonts-style display-1"></h2>
+                    <h2 class="mbr-fonts-style display-1">CODELAB</h2>
                     <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.
                     </p>
                     <div class="mbr-section-btn" buttons="0">
@@ -73,7 +73,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 <img src="assets/images/1-970x450.jpg" title="FULL SCREEN SLIDER">
                 <div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
-                    <h2 class="mbr-fonts-style display-1"></h2>
+                    <h2 class="mbr-fonts-style display-1">CODELAB</h2>
                     <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
                     <div class="mbr-section-btn" buttons="0">
                       <a class="btn btn-success display-4" id="login2">LOGIN</a>
@@ -92,7 +92,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 </div>
                 <img src="assets/images/2-910x411.jpg" title="FULL SCREEN SLIDER"><div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
-                    <h2 class="mbr-fonts-style display-1"></h2>
+                    <h2 class="mbr-fonts-style display-1">CODELAB</h2>
                     <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
                     <div class="mbr-section-btn" buttons="0">
                       <a class="btn btn-success display-4" id="login3">LOGIN</a> 
