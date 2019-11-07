@@ -1,5 +1,7 @@
 CREATE DATABASE spms;
 
+USE spms;
+
 CREATE TABLE admin( 
     admin_id int AUTO_INCREMENT, 
     firstname varchar(50), 
@@ -40,6 +42,8 @@ CREATE TABLE project(
     progress numeric(3),
     category varchar(75),
     keywords varchar(200),
+    documents varchar(500),
+    due_date date,
     PRIMARY KEY(project_id)
 );
 
@@ -62,7 +66,6 @@ CREATE TABLE owns(
     client_id int,
     project_id int,
     start_date date,
-    due_date date,
     PRIMARY KEY(client_id,project_id),
     FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE CASCADE,
     FOREIGN KEY(project_id) REFERENCES project(project_id) ON DELETE CASCADE
@@ -84,4 +87,23 @@ CREATE TABLE develops(
     FOREIGN KEY(developer_id) REFERENCES developer(developer_id),
     FOREIGN KEY(project_id) REFERENCES project(project_id) ON DELETE CASCADE
 );
+
+CREATE TABLE project_feedback(
+    project_id int,
+    rating tinyint(1),
+    feedback varchar(300),
+    PRIMARY KEY (project_id),
+    FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE 
+
+);
  
+CREATE TABLE developer_feedback(
+    developer_id int,
+    project_id int,
+    rating tinyint(1),
+    feedback varchar(300),
+    PRIMARY KEY (project_id,developer_id),
+    FOREIGN KEY (project_id) REFERENCES project(project_id) ON DELETE CASCADE,
+    FOREIGN KEY (developer_id) REFERENCES developer(developer_id) ON DELETE CASCADE
+
+);
