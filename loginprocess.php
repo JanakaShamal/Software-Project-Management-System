@@ -16,7 +16,7 @@ session_start();
 	<?php
 	if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false){
 		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$pssword = $_POST['pssword'];
 		$queryclient = "SELECT client_id, firstname, lastname, email, contact_no, password FROM client where email = '{$email}'" ;
 		$resultclient = mysqli_query($connection, $queryclient);
 		$valid_email = false;
@@ -26,7 +26,7 @@ session_start();
 			$valid_email = true;
 			$recordclient = mysqli_fetch_assoc($resultclient);
 			//if($['email'] == $email){
-				if($recordclient['password']==sha1($password)){					
+				if($recordclient['pssword']==sha1($pssword)){					
 					$valid_pwd = true;
 					$client_id = $recordclient['client_id'];
 					$email = $recordclient['email'];
@@ -47,7 +47,7 @@ session_start();
 				$valid_email = true;
 				$recordemployee = mysqli_fetch_assoc($resultemployee);
 				//if($recordemployee['email'] == $email){
-				if($recordemployee['password']==sha1($password)){
+				if($recordemployee['pssword']==sha1($pssword)){
 					$valid_pwd = true;
 					$employee_id = $recordemployee['employee_id'];
 					$firstname = $recordemployee['firstname'];
@@ -67,7 +67,7 @@ session_start();
 					$valid_email = true;
 					$recordadmin = mysqli_fetch_assoc($resultadmin);
 					//if($recordemployee['email'] == $email){
-					if($recordadmin['password']==sha1($password)){
+					if($recordadmin['pssword']==sha1($pssword)){
 						$valid_pwd = true;
 						$admin_id = $recordadmin['employee_id'];
 						$firstname = $recordadmin['firstname'];

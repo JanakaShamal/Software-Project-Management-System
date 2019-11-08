@@ -4,20 +4,20 @@
 	width:50%;
 	float: left; 
 	}
-	.form-container div input[type=text], .form-container div input[type=password]{
+	.form-container div input[type=text], .form-container div input[type=password], .form-container div input[type=tel], .form-container div input[type=number]{
 		width:99%; 
 		margin:none;
 		border:none;
 		
 	}
-	.inline input[type=text], .inline input[type=password]{
+	.inline input[type=text], .inline input[type=password], .inline input[type=tel], .inline input[type=number]{
 		float: left;
 	}
 
-	.inline2 input[type=text], .inline2 input[type=password]{
+	.inline2 input[type=text], .inline2 input[type=password], .inline2 input[type=tel], .inline2 input[type=number]{
 		float: right;
 	}
-	.form-containersignup input[type=text], .form-containersignup input[type=password] {
+	.form-containersignup input[type=text], .form-containersignup input[type=password], .form-containersignup input[type=tel], .form-containersignup input[type=number] {
   		width: 50%;
   		padding: 15px;
   		margin: 5px 0 22px 0;
@@ -43,19 +43,19 @@
 	width:50%;
 	float: left; 
 	}
-	.form-container div input[type=text], .form-container div input[type=password]{
+	.form-container div input[type=text], .form-container div input[type=password], .form-container div input[type=tel], .form-container div input[type=number]{
 		width:99%; 
 		margin:none;
 		border:none;
 	}
-	.inline input[type=text], .inline input[type=password]{
+	.inline input[type=text], .inline input[type=password],.inline input[type=tel], .inline input[type=number]{
 		float: left;
 	}
 
-	.inline2 input[type=text], .inline2 input[type=password]{
+	.inline2 input[type=text], .inline2 input[type=password], .inline2 input[type=tel], .inline2 input[type=number]{
 		float: right;
 	}
-	.form-containersignup input[type=text], .form-containersignup input[type=password] {
+	.form-containersignup input[type=text], .form-containersignup input[type=password] , .form-containersignup input[type=tel], .form-containersignup input[type=number] {
   		width: 50%;
   		padding: 15px;
   		margin: 5px 0 22px 0;
@@ -83,19 +83,19 @@
 	width:50%;
 	float: left; 
 	}
-	.form-container div input[type=text], .form-container div input[type=password]{
+	.form-container div input[type=text], .form-container div input[type=password] , .form-container div input[type=tel], .form-container div input[type=number]{
 		width:99%; 
 		margin:none;
 		border:none;
 	}
-	.inline input[type=text], .inline input[type=password]{
+	.inline input[type=text], .inline input[type=password], .inline input[type=tel], .inline input[type=number]{
 		float: left;
 	}
 
-	.inline2 input[type=text], .inline2 input[type=password]{
+	.inline2 input[type=text], .inline2 input[type=password], .inline2 input[type=tel], .inline2 input[type=number]{
 		float: right;
 	}
-	.form-containersignup input[type=text], .form-containersignup input[type=password] {
+	.form-containersignup input[type=text], .form-containersignup input[type=password], .form-containersignup input[type=tel], .form-containersignup input[type=number] {
   		width: 50%;
   		padding: 15px;
   		margin: 5px 0 22px 0;
@@ -156,7 +156,7 @@
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password], .form-container input[type=email] {
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=email], .form-containersignup input[type=tel], .form-containersignup input[type=number] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -166,7 +166,7 @@
 
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container input[type=email]:focus {
+.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container input[type=email]:focus, .form-containersignup input[type=tel]:focus, .form-containersignup input[type=number]:focus {
   background-color: #ddd;
   outline: none;
 }

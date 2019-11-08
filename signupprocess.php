@@ -3,6 +3,7 @@ include_once('includes/connection.php');
 require('includes/User.php');
 require('includes/Client.php');
 require('includes/Employee.php');
+require('includes/Admin.php');
 
 ?>
 <!DOCTYPE html>
@@ -15,12 +16,11 @@ require('includes/Employee.php');
 	<?php
 	if (isset($_POST['submit']) and $_SESSION['logged_in']==false) {
 		# code...
-	
-		$first_name = $_POST['first_name'];
-		$last_name = $_POST['last_name'];
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
-		$contact_number = $_POST['contact_number'];
-		$password = sha1($_POST['password']);
+		$contact_no = $_POST['contact_no'];
+		$pssword = sha1($_POST['pssword']);
 		//$repassword = sha1($_POST['repassword']);
 		$psw = $_POST["psw"];
 		$repsw = $_POST["repsw"];
@@ -42,9 +42,9 @@ require('includes/Employee.php');
 					/*$query = "INSERT INTO client (first_name, last_name, email, contact_number, password) VALUES('{$first_name}', '{$last_name}', '{$email}', {$contact_number}, '{$password}')";
 		
 					mysqli_query($connection,$query);*/
-					$current_user = new Client($first_name, $last_name, $email, $contact_number);
+					$current_user = new Client($firstname, $lastname, $email, $contact_no);
 					$_SESSION['current_user'] = $current_user;
-					$_SESSION['password'] = $password;
+					$_SESSION['pssword'] = $pssword;
 					header("Location:emailverification.php");
 					// Method to go to next page - email verification page
 				}
@@ -83,7 +83,7 @@ require('includes/Employee.php');
 		}
 	}
 	else{
-		header("Location: index.php");
+		header("Location: home.php");
 	}
 	?>
 </body>
