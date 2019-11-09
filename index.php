@@ -121,8 +121,8 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw1"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw1" required>
 
       <button type="submit" class="btn" name="submit">Login</button>
       <button type="button" class="btn cancel" id="logincancel">Close</button>
@@ -149,6 +149,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
         <label for="acc_no"><b>Account number</b></label><br>
         <input type="number" placeholder="Enter Account number" name="acc_no" required>
       </div>
+      <?php echo"Your Password should contain atleast a symbol, a digit and a block letter."."<br/>"."Should have 5 or more characters without whitespaces.";?>
       <div class="inline">
         <label for="psw"><b>Password</b></label><br>
         <input type="password" placeholder="Enter Password" name="psw" required>

@@ -20,7 +20,7 @@ require('includes/Admin.php');
 		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
 		$contact_no = $_POST['contact_no'];
-		$pssword = sha1($_POST['pssword']);
+		$pssword = sha1($_POST['psw']);
 		//$repassword = sha1($_POST['repassword']);
 		$psw = $_POST["psw"];
 		$repsw = $_POST["repsw"];

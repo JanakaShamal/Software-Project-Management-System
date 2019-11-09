@@ -17,7 +17,7 @@ session_start(); ?>
 		$header = "From: "; 	// sender email
 		$rand_num = substr(str_shuffle("0123456789"),0,5);
 		$msg = "Enter the received verification code at the webpage.\n\nVerification Code: " . "{$rand_num}";
-		if (mail($email, 'DocuLancer - Email Verification', $msg, $header)){
+		if (mail($email, 'CodeLab - Email Verification', $msg, $header)){
 			$_SESSION['rand_num']=$rand_num;
 			echo "<script> window.history.back(); </script>";
 		}
