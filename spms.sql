@@ -4,12 +4,13 @@ USE spms;
 
 CREATE TABLE admin( 
     admin_id int AUTO_INCREMENT, 
-    firstname varchar(50), 
+    firstname varchar (50), 
     lastname varchar(50),
     email varchar(75),
     pssword varchar(150),
     PRIMARY KEY(admin_id) 
 );
+
 
 CREATE TABLE client( 
     client_id int AUTO_INCREMENT,
@@ -43,6 +44,7 @@ CREATE TABLE project(
     category varchar(75),
     keywords varchar(200),
     documents varchar(500),
+    location varchar(200),
     due_date date,
     PRIMARY KEY(project_id)
 );
