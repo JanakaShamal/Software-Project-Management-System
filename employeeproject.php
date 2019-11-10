@@ -1,9 +1,10 @@
 <?php  
 include_once 'includes/connection.php';
-
+session_start();
 $sql = "SELECT employee_id, firstname, lastname,email, contact_no FROM employee ";
 $result = $connection->query($sql);
-
+$project_id=$_GET['projectid'];
+$_SESSION["project_id"] = $project_id;
 $connection->close();
 ?>
 <html>
@@ -43,6 +44,7 @@ $connection->close();
 											<th>Last Name</th>
 											<th>Email</th>
 											<th>Contact Number</th>
+											<th>Add to Project</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -58,6 +60,7 @@ $connection->close();
                             				<td><?php echo $row['lastname']?></td>
                             				<td><?php echo $row['email']?></td>
                             				<td><?php echo $row['contact_no']?></td>
+                            				<td><a href="employeeprojectadding.php?employee_id=<?php echo $row['employee_id']?>"  class="button special icon fa-plus">Add</a></td>
                             			</tr>
                             
                         			<?php
