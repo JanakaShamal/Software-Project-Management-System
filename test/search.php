@@ -1,5 +1,6 @@
 <?php
  include 'header.php';
+
 ?>
 <head>
 <script src="Resources/jquery/jquery-3.3.1.min.js"></script>
@@ -30,6 +31,11 @@
     <link href="Resoures/styles.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">
+    <img classs="img-responsive" width="" height="75px"  src="Screenshot(6).jpg" >
+    </a>
+</nav>
 <div class = "artical-container">
     <?php
         if(isset($_POST['submit-search'])){
