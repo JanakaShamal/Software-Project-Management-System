@@ -53,7 +53,8 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 <div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
                     <h2 class="mbr-fonts-style display-1">CODELAB</h2>
-                    <p class="lead mbr-text mbr-fonts-style display-5">The easiest way to interact with your service provider. Join us now to get the best experience on your projects with CODELAB.</p>
+                    <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.
+                    </p>
                     <div class="mbr-section-btn" buttons="0">
                       <a class="btn btn-success display-4" id="login1">LOGIN</a>
                        <a class="btn  btn-white-outline display-4" id="signup1">SIGNUP</a>
@@ -73,7 +74,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 <div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
                     <h2 class="mbr-fonts-style display-1">CODELAB</h2>
-                    <p class="lead mbr-text mbr-fonts-style display-5">The easiest way to interact with your service provider. Join us now to get the best experience on your projects with CODELAB.</p>
+                    <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
                     <div class="mbr-section-btn" buttons="0">
                       <a class="btn btn-success display-4" id="login2">LOGIN</a>
                       <a class="btn  btn-white-outline display-4" id="signup2">SIGNUP</a>
@@ -92,7 +93,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
                 <img src="assets/images/2-910x411.jpg" title="FULL SCREEN SLIDER"><div class="carousel-caption justify-content-center">
                   <div class="col-10 align-center">
                     <h2 class="mbr-fonts-style display-1">CODELAB</h2>
-                    <p class="lead mbr-text mbr-fonts-style display-5">The easiest way to interact with your service provider. Join us now to get the best experience on your projects with CODELAB.</p>
+                    <p class="lead mbr-text mbr-fonts-style display-5">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
                     <div class="mbr-section-btn" buttons="0">
                       <a class="btn btn-success display-4" id="login3">LOGIN</a> 
                       <a class="btn  btn-white-outline display-4" id="signup3">SIGNUP</a>
@@ -114,21 +115,21 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
       </div>
     </div>
   <div class="form-popup" id="loginForm">
-    <form action="loginprocess.php" class="form-container">
+    <form action="loginprocess.php" class="form-container" method="post">
       <h1>Login</h1>
 
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw1"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw1" required>
 
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn" name="submit">Login</button>
       <button type="button" class="btn cancel" id="logincancel">Close</button>
     </form>
   </div>
   <div class="form-popup" id="signupForm">
-    <form action="signupprocess.php" class="form-container form-containersignup">
+    <form action="signupprocess.php" class="form-container form-containersignup" method="post">
       <h1>Signup</h1>
       <div class="inline">
         <label for="firstname"><b>First Name</b></label><br>
@@ -141,6 +142,15 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
       <label for="email"><b>Email</b></label>
       <input type="email" placeholder="Enter Email" name="email" required>
       <div class="inline">
+        <label for="contact_no"><b>Contact number</b></label><br>
+        <input type="tel" placeholder="Enter contact number" name="contact_no" required>
+      </div>
+      <div class="inline inline2">
+        <label for="acc_no"><b>Account number</b></label><br>
+        <input type="number" placeholder="Enter Account number" name="acc_no" required>
+      </div>
+      <?php echo"Your Password should contain atleast a symbol, a digit and a block letter."."<br/>"."Should have 5 or more characters without whitespaces.";?>
+      <div class="inline">
         <label for="psw"><b>Password</b></label><br>
         <input type="password" placeholder="Enter Password" name="psw" required>
       </div>
@@ -148,7 +158,7 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
         <label for="repsw"><b>Re-Password</b></label><br>
         <input type="password" placeholder="Re-Enter Password" name="repsw" required>
       </div>
-      <button type="submit" class="btn">Signup</button>
+      <button type="submit" class="btn" name="submit">Signup</button>
       <button type="button" class="btn cancel" id="signupcancel" >Close</button>
     </form>
   </div>
@@ -177,5 +187,5 @@ if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false): ?>
 </body>
 </html>
 <?php else: ?>
-  <?php header("Location: index.php"); ?>
+  <?php header("Location: home.php"); ?>
 <?php endif; ?>
