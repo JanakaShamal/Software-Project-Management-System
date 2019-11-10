@@ -7,12 +7,7 @@
 		//$text = mysql_real_escape_string($text);
 		$Price = $_POST['Name'];
 		if ( $text!=NUll  and $Price!=Null ){
-			if($re!='http://'){
-				$text='http://'.$text;	
-			}
-			else{
-				$text=$text;
-			}
+			
 			$sql = "INSERT INTO project_link( name,link) VALUES ('$Price','$text');";
 			mysqli_query($db,$sql);
 		}
