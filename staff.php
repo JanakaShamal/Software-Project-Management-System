@@ -69,7 +69,7 @@ $connection->close();
 										
 									</tbody>
 								</table>
-								<li><a href="addemployee.php" class="button special icon fa-user-plus">Add</a></li>
+								<a href="addemployee.php" class="button special icon fa-user-plus">Add</a></l>
 							</div>
 						</section>
 
