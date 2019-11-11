@@ -1,14 +1,14 @@
 <?php  
 include_once 'includes/connection.php';
 
-$sql = "SELECT employee_id, firstname, lastname,email, contact_no FROM employee ";
+$sql = "SELECT project_id, title, pro_status, progress, category, keywords, documents, location, due_date FROM project";
 $result = $connection->query($sql);
 
 $connection->close();
 ?>
 <html>
 	<head>
-		<title>CodeLab Home</title>
+		<title>CodeLab Upcoming</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -32,17 +32,22 @@ $connection->close();
 			</header>
 			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 		<section>
-							<h3><i class="fas fa-users"></i> Staff Members</h3>
-							<h4> | Developers |</h4>
+							<h3><i class="fas fa-file-code"></i> &nbsp Upcoming Projects</h3>
 							<div class="table-wrapper">
-								<table>
+								<table class="alt">
 									<thead>
 										<tr>
 											<th>Id</th>
-											<th>First Name</th>
-											<th>Last Name</th>
-											<th>Email</th>
-											<th>Contact Number</th>
+											<th>Title</th>
+											<th>Status</th>
+											<th>Progress</th>
+											<th>Category</th>
+											<th>Keywords</th>
+											<th>Document</th>
+											<th>GitHub</th>
+											<th>Due-Date</th>
+											<th>Employees</th>
+											<th>Update</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -53,11 +58,17 @@ $connection->close();
                    					 while($row = $result->fetch_assoc()) {
                        						 ?>
                        						<tr>
-                            				<td><?php echo $row['employee_id']?></td>
-                            				<td><?php echo $row['firstname']?></td>
-                            				<td><?php echo $row['lastname']?></td>
-                            				<td><?php echo $row['email']?></td>
-                            				<td><?php echo $row['contact_no']?></td>
+                            				<td><?php echo $row['project_id']?></td>
+                            				<td><?php echo $row['title']?></td>
+                            				<td><?php echo $row['pro_status']?></td>
+                            				<td><?php echo $row['progress']?></td>
+                            				<td><?php echo $row['category']?></td>
+                            				<td><?php echo $row['keywords']?></td>
+                            				<td><?php echo $row['documents']?></td>
+                            				<td><?php echo $row['location']?></td>
+                            				<td><?php echo $row['due_date']?></td>
+                            				<td><a href="employeeproject.php?projectid=<?php echo $row['project_id'] ?>"  class="button special icon fa-plus">Add Employees</a></td>
+                            				<td><a href="updateproject.php?projectid=<?php echo $row['project_id'] ?>"  class="button special icon fa-pencil">Update</a></td>
                             			</tr>
                             
                         			<?php
@@ -69,7 +80,7 @@ $connection->close();
 										
 									</tbody>
 								</table>
-								<a href="addemployee.php" class="button special icon fa-user-plus">Add</a>
+								
 							</div>
 						</section>
 

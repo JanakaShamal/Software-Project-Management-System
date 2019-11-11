@@ -4,13 +4,15 @@ require 'includes/User.php';
 require 'includes/Client.php';
 require 'includes/Admin.php';
 require 'includes/Employee.php';
+$project_id=$_GET['projectid'];
+$sql = "SELECT title, pro_status, progress,category,keywords,documents,location,due_date FROM project where project_id = '$project_id'";
+$result = $connection->query($sql);
+$row = $result->fetch_assoc();
+
+
 session_start();
-$current_user = $_SESSION['current_user'];
-$firstname = $current_user->get_firstname();
-$lastname = $current_user->get_lastname();
-$email= $current_user->get_email();
-$contact_number= $current_user->get_contact_no();
-$id= $current_user->get_id();
+//$current_user = $_SESSION['current_user'];
+//$id= $current_user->get_id();
  ?>
  
 <!DOCTYPE HTML>
@@ -43,35 +45,47 @@ $id= $current_user->get_id();
 			<section id="footer">
 				<div class="inner">
 					<header>
-						<h2><?php echo $firstname,$lastname; ?></h2>
+						<h2>Place New Project</h2>
 					</header>
-					<form method="post" action="updateprofile.php">
+					<form method="post" action="updateprojectback.php">
 						<div class="field">
-							<label for="email">ID</label>
-							<input type="text" name="id" id="id" value="<?php echo $id ?>" readonly />
+							<label for="title">Project ID</label>
+							<input type="text" name="id" id="id" value="<?php echo $project_id; ?>" readonly/>
+						</div>
+						<div class="field">
+							<label for="title">Title</label>
+							<input type="text" name="title" id="title" value="<?php echo $row['title']; ?>" />
 						</div>
 						<div class="field half first">
-							<label for="name">First Name</label>
-							<input type="text" name="firstname" id="firstname" value="<?php echo $firstname ?>"/>
+							<label for="status">Project Status</label>
+							<input type="text" name="status" id="status" value="<?php echo $row['pro_status']; ?>" />
 						</div>
 						<div class="field half">
-							<label for="email">Last Name</label>
-							<input type="text" name="lastname" id="lastname" value="<?php echo $lastname ?>" />
+							<label for="progress">Progress</label>
+							<input type="text" name="progress" id="progress" value="<?php echo $row['progress']; ?>" />
 						</div>
 						<div class="field">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" value="<?php echo $email ?>" />
+							<label for="category">Category/Domain</label>
+							<input type="text" name="category" id="category" value="<?php echo $row['category']; ?>" />
 						</div>
 						<div class="field">
-							<label for="email">Password |Give Current or New Password</label>
-							<input type="Password" name="password" id="password" value="" required="" />
+							<label for="keywords">Keywords</label>
+							<input type="text" name="keywords" id="keywords" value="<?php echo $row['keywords']; ?>" />
 						</div>
 						<div class="field">
-							<label for="email">Mobile Number</label>
-							<input type="text" name="mobilenumber" id="mobilenumber" value="<?php echo $contact_number ?>" />
+							<label for="email">Documents</label>
+							<input type="text" name="documents" id="documents" value="<?php echo $row['documents']; ?>" />
+						</div>
+						<div class="field">
+							<label for="email">Location</label>
+							<input type="text" name="location" id="location" value="<?php echo $row['location']; ?>" />
+						</div>
+						<div class="field">
+							<label for="email">Due_Date</label>
+							<input type="text" name="due_date" id="due_date" value="<?php echo $row['due_date']; ?>" />
 						</div>
 						<ul class="actions">
-							<li><input type="submit" value="Edit My Account" class="alt" /></li>
+							<li><input type="submit" value="Update" class="alt" /></li>
 						</ul>
 					</form>
 				</div>

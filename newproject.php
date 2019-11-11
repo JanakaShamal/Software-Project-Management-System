@@ -5,12 +5,8 @@ require 'includes/Client.php';
 require 'includes/Admin.php';
 require 'includes/Employee.php';
 session_start();
-$current_user = $_SESSION['current_user'];
-$firstname = $current_user->get_firstname();
-$lastname = $current_user->get_lastname();
-$email= $current_user->get_email();
-$contact_number= $current_user->get_contact_no();
-$id= $current_user->get_id();
+//$current_user = $_SESSION['current_user'];
+//$id= $current_user->get_id();
  ?>
  
 <!DOCTYPE HTML>
@@ -30,9 +26,9 @@ $id= $current_user->get_id();
 				<div class="inner">
 					<a href="index.html" class="logo">CodeLab</a>
 					<nav id="nav">
-						<a href="index.html"><i class="fas fa-home"></i> Home</a>
-						<a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a>
-						<a href="contact.html"><i class="fas fa-address-card"></i> Contact Us</a>
+						<a href="index.php"><i class="fas fa-home"></i> Home</a>
+						<a href="projects.php"><i class="fas fa-project-diagram"></i> Projects</a>
+						<a href="contact.php"><i class="fas fa-address-card"></i> Contact Us</a>
 						<a href="myaccount.php"><i class="fas fa-user-circle" style="font-size: 20px;"></i></a>
 						<a href="logout.php"><i class="fas fa-sign-out-alt" style="font-size: 20px;"></i></a>
 					</nav>
@@ -43,35 +39,43 @@ $id= $current_user->get_id();
 			<section id="footer">
 				<div class="inner">
 					<header>
-						<h2><?php echo $firstname,$lastname; ?></h2>
+						<h2>Place New Project</h2>
 					</header>
-					<form method="post" action="updateprofile.php">
+					<form method="post" action="addp.php">
 						<div class="field">
-							<label for="email">ID</label>
-							<input type="text" name="id" id="id" value="<?php echo $id ?>" readonly />
+							<label for="title">Title</label>
+							<input type="text" name="title" id="title" value="" />
 						</div>
 						<div class="field half first">
-							<label for="name">First Name</label>
-							<input type="text" name="firstname" id="firstname" value="<?php echo $firstname ?>"/>
+							<label for="status">Project Status</label>
+							<input type="text" name="status" id="status" value="New" readonly />
 						</div>
 						<div class="field half">
-							<label for="email">Last Name</label>
-							<input type="text" name="lastname" id="lastname" value="<?php echo $lastname ?>" />
+							<label for="progress">Progress</label>
+							<input type="text" name="progress" id="progress" value="0" readonly />
 						</div>
 						<div class="field">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" value="<?php echo $email ?>" />
+							<label for="category">Category/Domain</label>
+							<input type="text" name="category" id="category" value="" />
 						</div>
 						<div class="field">
-							<label for="email">Password |Give Current or New Password</label>
-							<input type="Password" name="password" id="password" value="" required="" />
+							<label for="keywords">Keywords</label>
+							<input type="text" name="keywords" id="keywords" value="" />
 						</div>
 						<div class="field">
-							<label for="email">Mobile Number</label>
-							<input type="text" name="mobilenumber" id="mobilenumber" value="<?php echo $contact_number ?>" />
+							<label for="email">Documents</label>
+							<input type="text" name="documents" id="documents" value="Essential/ Place Documentation Link or Attatchment" required="" />
+						</div>
+						<div class="field">
+							<label for="email">Location</label>
+							<input type="text" name="location" id="location" value="New" readonly/>
+						</div>
+						<div class="field">
+							<label for="email">Due_Date</label>
+							<input type="text" name="due_date" id="due_date" value="" required="" />
 						</div>
 						<ul class="actions">
-							<li><input type="submit" value="Edit My Account" class="alt" /></li>
+							<li><input type="submit" value="Place Order" class="alt" /></li>
 						</ul>
 					</form>
 				</div>

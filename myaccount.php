@@ -1,18 +1,6 @@
 <?php 
-include_once 'includes/connection.php';
-require 'includes/User.php';
-require 'includes/Client.php';
-require 'includes/Admin.php';
-require 'includes/Employee.php';
-session_start();
-$current_user = $_SESSION['current_user'];
-$firstname = $current_user->get_firstname();
-$lastname = $current_user->get_lastname();
-$email= $current_user->get_email();
-$contact_number= $current_user->get_contact_no();
-$id= $current_user->get_id();
- ?>
- 
+require 
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -43,32 +31,32 @@ $id= $current_user->get_id();
 			<section id="footer">
 				<div class="inner">
 					<header>
-						<h2><?php echo $firstname,$lastname; ?></h2>
+						<h2>My Account</h2>
 					</header>
-					<form method="post" action="updateprofile.php">
-						<div class="field">
-							<label for="email">ID</label>
-							<input type="text" name="id" id="id" value="<?php echo $id ?>" readonly />
-						</div>
+					<form method="post" action="#">
 						<div class="field half first">
 							<label for="name">First Name</label>
-							<input type="text" name="firstname" id="firstname" value="<?php echo $firstname ?>"/>
+							<input type="text" name="name" id="name" />
 						</div>
 						<div class="field half">
 							<label for="email">Last Name</label>
-							<input type="text" name="lastname" id="lastname" value="<?php echo $lastname ?>" />
+							<input type="text" name="email" id="email" />
 						</div>
 						<div class="field">
 							<label for="email">Email</label>
-							<input type="text" name="email" id="email" value="<?php echo $email ?>" />
+							<input type="text" name="email" id="email" />
 						</div>
 						<div class="field">
-							<label for="email">Password |Give Current or New Password</label>
-							<input type="Password" name="password" id="password" value="" required="" />
+							<label for="email">Password</label>
+							<input type="Password" name="email" id="email" />
 						</div>
 						<div class="field">
 							<label for="email">Mobile Number</label>
-							<input type="text" name="mobilenumber" id="mobilenumber" value="<?php echo $contact_number ?>" />
+							<input type="text" name="email" id="email" />
+						</div>
+						<div class="field">
+							<label for="email">Account Number</label>
+							<input type="text" name="email" id="email" />
 						</div>
 						<ul class="actions">
 							<li><input type="submit" value="Edit My Account" class="alt" /></li>
